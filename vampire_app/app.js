@@ -261,19 +261,50 @@ const vampireData = require('./populateVampires')
 //     }
 // });
 
-Vampire.find({$and: [{loves: 'fancy cloaks'}, {loves: {$nin: ['top hats', 'virgin blood']}}]}, (err, vampireFind) => {
-    if(err){
-        console.log(err)
-    } else {
-        console.log(vampireFind)
-    }
-});
+// Vampire.find({$and: [{loves: 'fancy cloaks'}, {loves: {$nin: ['top hats', 'virgin blood']}}]}, (err, vampireFind) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireFind)
+//     }
+// });
 /////////////////////////////////////////////////
 //### Negative Selection
+// Vampire.find({$and: [{loves: 'ribbons'}, {eye_color: {$ne: ['green']}}]}, (err, vampireFind) => {
+//     if(err){
+//         console.log(err)
+//     }else {
+//         console.log(vampireFind)
+//     }
+// });
 
+// Vampire.find({location: {$ne: 'Rome, Italy'}}, (err, vampireFind) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireFind)
+//     }
+// });
+
+// Vampire.find({love: {$ne: ['fancy cloaks', 'frilly shirsleeves', 'appearing innocent', 'being tragic', 'brooding']}}, (err, vampireFind) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireFind)
+//     }
+// });
+
+// Vampire.find({victims: {$lte: 200}}, (err, vampireFind) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireFind)
+//     }
+// });
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
+
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
