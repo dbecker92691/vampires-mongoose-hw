@@ -150,17 +150,49 @@ const vampireData = require('./populateVampires')
 //     }
 // });
 
-Vampire.find({victims: {$gte: 150, $lte: 500}}, (err, vampireFind) => {
+// Vampire.find({victims: {$gte: 150, $lte: 500}}, (err, vampireFind) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireFind)
+//     }
+// });
+
+
+/////////////////////////////////////////////////
+// ### Select by comparison
+
+// Vampire.find({ title: {$exists: true}}, (err, vampireExists) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireExists)
+//     }
+// });
+
+// Vampire.find({ victims: {$exists: false}}, (err, vampireExists) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireExists)
+//     }
+// })
+
+// Vampire.find({victims: {$exists: false}, title: {$exists: true}}, (err, vampireFind) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireFind)
+//     }
+// });
+
+Vampire.find({victims: {$gte: 1000}}, (err, vampireFind) => {
     if(err){
         console.log(err)
     } else {
         console.log(vampireFind)
     }
 })
-
-/////////////////////////////////////////////////
-// ### Select by comparison
-
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
 
