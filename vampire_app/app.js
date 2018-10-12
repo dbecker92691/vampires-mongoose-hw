@@ -65,7 +65,7 @@ const vampireData = require('./populateVampires')
 //     dob: new Date(1993, 2, 13, 7, 47),
 //     loves: ['Insta', 'PSLs', 'Ugg Boots', 'The blood of the innocent'],
 //     location: 'Chi O till I die O!!',
-//     gender: 'F',
+//     gender: 'f',
 //     victims: 13, 
 // }, (err, createdVampire) => {
 //     if(err){
@@ -92,29 +92,72 @@ const vampireData = require('./populateVampires')
 //     }
 // }
 // );
-Vampire.create(
-    { name: 'Debbi',
-    hair_color: 'Brown',
-    eye_color: 'Green',
-    dob: new Date(1973, 2, 13, 7, 47),
-    loves: ['One Prozac a day', 'Springsteen', 'Madonna', 'U2', 'Blondie'],
-    location: 'Philadelphia',
-    gender: 'F',
-    victims: 1985, 
-}, (err, createdVampire) => {
-    if(err){
-        console.log(err)
-    } else {
-        console.log(createdVampire)
-    }
-}
-);
+// Vampire.create(
+//     { name: 'Debbi',
+//     hair_color: 'Brown',
+//     eye_color: 'Green',
+//     dob: new Date(1973, 2, 13, 7, 47),
+//     loves: ['One Prozac a day', 'Springsteen', 'Madonna', 'U2', 'Blondie'],
+//     location: 'Philadelphia',
+//     gender: 'f',
+//     victims: 1985, 
+// }, (err, createdVampire) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(createdVampire)
+//     }
+// }
+// );
 
 
 // ### Add some new vampire data
 
 /////////////////////////////////////////////////
 // ## QUERYING
+
+// Vampire.find({ gender: 'F' }, (err, vampireFind) => {
+//     if (err) {
+//         console.log(err)
+//     }else {
+//         console.log(vampireFind)
+
+//     }
+//   });
+
+// Vampire.find({ victims: { $gt: 500}}, (err, victimFind) => {
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(victimFind)
+//     }
+
+// });
+
+// Vampire.find({victims: {$lte: 150}}, (err, vampireFind) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireFind)
+//     }
+// });
+
+// Vampire.find({victims: {$ne: 210234}}, (err, vampireFind) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireFind)
+//     }
+// });
+
+Vampire.find({victims: {$gte: 150, $lte: 500}}, (err, vampireFind) => {
+    if(err){
+        console.log(err)
+    } else {
+        console.log(vampireFind)
+    }
+})
+
 /////////////////////////////////////////////////
 // ### Select by comparison
 
