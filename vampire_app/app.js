@@ -226,19 +226,48 @@ const vampireData = require('./populateVampires')
 //     }
 // });
 
-Vampire.find({$or: [{hair_color: 'red'}, {eye_color: 'green'}]}, (err, vampFind) => {
-    if(err){
-        console.log(err)
-    } else {
-        console.log(vampFind)
-    }
-});
+// Vampire.find({$or: [{hair_color: 'red'}, {eye_color: 'green'}]}, (err, vampFind) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampFind)
+//     }
+// });
 
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
 
+// Vampire.find({$or: [{loves: 'frilly shirtsleeves'}, {loves: 'frilly collars'}]}, (err, vampireFind) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireFind)
+//     }
+// });
 
+// Vampire.find({loves: 'brooding'}, (err,vampireFind) =>{
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireFind)
+//     }
+// });
 
+// Vampire.find({$or: [{loves: 'appearing innocent'}, {loves: 'trickery'}, {loves: 'lurking in rotting mansions'}, {loves: 'R&B music'}]}, (err, vampireFinds) => {
+//     if(err) {
+//         console.log(err)
+//     } else {
+//         console.log(vampireFinds)
+//     }
+// });
+
+Vampire.find({$and: [{loves: 'fancy cloaks'}, {loves: {$nin: ['top hats', 'virgin blood']}}]}, (err, vampireFind) => {
+    if(err){
+        console.log(err)
+    } else {
+        console.log(vampireFind)
+    }
+});
 /////////////////////////////////////////////////
 //### Negative Selection
 
