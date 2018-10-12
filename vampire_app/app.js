@@ -116,6 +116,11 @@ const vampireData = require('./populateVampires')
 /////////////////////////////////////////////////
 // ## QUERYING
 
+
+
+
+/////////////////////////////////////////////////
+// ### Select by comparison
 // Vampire.find({ gender: 'F' }, (err, vampireFind) => {
 //     if (err) {
 //         console.log(err)
@@ -160,7 +165,7 @@ const vampireData = require('./populateVampires')
 
 
 /////////////////////////////////////////////////
-// ### Select by comparison
+// ### Select by exists or does not exist
 
 // Vampire.find({ title: {$exists: true}}, (err, vampireExists) => {
 //     if(err){
@@ -186,21 +191,53 @@ const vampireData = require('./populateVampires')
 //     }
 // });
 
-Vampire.find({victims: {$gte: 1000}}, (err, vampireFind) => {
-    if(err){
-        console.log(err)
-    } else {
-        console.log(vampireFind)
-    }
-})
-/////////////////////////////////////////////////
-// ### Select by exists or does not exist
+// Vampire.find({victims: {$gte: 1000}}, (err, vampireFind) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireFind)
+//     }
+// });
 
 /////////////////////////////////////////////////
 // ### Select with OR
 
+// Vampire.find({ $or:[{location:'New York, New York, US' }, { location: 'New Orleans, Louisiana, US' }] }, (err, vampireLocation) => {
+//     if (err) {
+//         console.log(err)
+//     } else {
+//         console.log(vampireLocation)
+//     }
+// });
+
+// Vampire.find({$or: [{loves: 'brooding'}, {loves: 'being tragic'}]}, (err, vampireFinds) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireFinds)
+//     }
+// });
+
+// Vampire.find({$or: [{loves: 'marshmallows'},{victims: {$gte: 1000}}]}, (err, vampireFind) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireFind)
+//     }
+// });
+
+Vampire.find({$or: [{hair_color: 'red'}, {eye_color: 'green'}]}, (err, vampFind) => {
+    if(err){
+        console.log(err)
+    } else {
+        console.log(vampFind)
+    }
+});
+
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
+
+
 
 /////////////////////////////////////////////////
 //### Negative Selection
