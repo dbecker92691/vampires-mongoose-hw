@@ -304,16 +304,95 @@ const vampireData = require('./populateVampires')
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
+// Vampire.replaceOne({name: 'Claudia'}, {name: 'Eve', portrayed_by: 'Tilda Swinton'}, (err, vampireReplace) => {
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(vampireReplace)
+//     }
+// });
 
+// ??????? vvvvvvvvv
 
+// Vampire.replaceOne({gender: {$elemMatch: 'm'}}, {name: 'Guy Man', is_actually: 'were-lizard'}, (err, vampireReplace) => {
+// 	if(err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(vampireReplace)
+// 	}
+// });
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
 
+// Vampire.updateOne({name: 'Guy Man'}, {gender: 'f'}, (err, updatedVampire) => {
+// 	if(err){
+// 		console.log(err)
+// 	} else {
+// 		console.log(updatedVampire, "<---- Updated Vampire")
+// 	}
+// })
+
+// Vampire.updateOne({name: 'Eve'}, {gender: 'm'}, (err, updatedVampire) => {
+// 	if(err){
+// 		console.log(err)
+// 	} else {
+// 		console.log(updatedVampire)
+// 	}
+// }); 
+
+// Vampire.updateOne({name: 'Guy Man'}, {hates: ['clothes', 'jobs']}, (err, updatedVampire) => {
+// 	if(err){
+// 		console.log(err)
+// 	} else {
+// 		console.log(updatedVampire)
+// 	}
+// });
+
+// Vampire.updateOne({name: 'Guy Man'}, {hates: ['clothes', 'jobs', 'alarm clocks', 'jakalopes']}, (err, updatedVampire) => {
+// 	if(err){
+// 		console.log(err)
+// 	} else {
+// 		console.log(updatedVampire)
+// 	}
+// });
+
+// Vampire.updateOne({name: 'Eve'}, {name: 'moniker'}, (err, updatedVampire) => {
+// 	if(err){
+// 		console.log(err)
+// 	} else {
+// 		console.log(updatedVampire)
+// 	}
+// });
+
+
+// Vampire.updateMany({gender: 'f'}, {gender: '**fems**'}, (err, updatedVampire) => {
+// 	if(err){
+// 		console.log(err)
+// 	} else {
+// 		console.log(updatedVampire)
+// 	}
+// });
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REMOVE
 
+// Vampire.remove({hair_color: {$eq: 'brown' }}, {just_one: true}, (err, removedVampire) => {
+// 	if(err){
+// 		console.log(err)
+// 	} else {
+// 		console.log(removedVampire)
+// 	}
+// });
+
+
+// Vampire.remove({eye_color: {$eq: 'blue'}}, (err, removedVampire) => {
+// 	if(err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(removedVampire)
+// 	}
+// });
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 
